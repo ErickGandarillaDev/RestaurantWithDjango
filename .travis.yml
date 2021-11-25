@@ -3,7 +3,7 @@ language: python
 env:
     global:
       - PSQL_USERNAME=erick_gandarilla
-      - PSQL_PASS=erick_gandarilla123
+      - PSQL_PASS=erick_gandarilla123*
       - PSQL_DBNAME=erick_gandarilla_d
       - PSQL_HOST=localhost
       - PSQL_PORT=5506
@@ -11,7 +11,7 @@ env:
 services:
     - postgresql
 install:
-    - pip install django djangorestframework djangorestframework-simplejwt PyJWT django-cors-headers psycopg2-binary
+    - pip install django django-location-field djangorestframework djangorestframework-simplejwt PyJWT django-cors-headers psycopg2-binary
 #before_script:
 #  - psql -c "CREATE DATABASE prueba5506;" -U postgres
 #  - psql -c "CREATE USER samantha_guzman WITH PASSWORD pass;" -U postgres
