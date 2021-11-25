@@ -26,5 +26,9 @@ class ProductDetail(models.Model):
     order= models.ForeignKey(Order, on_delete=models.DO_NOTHING)
     product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
+
+    class Meta:
+        unique_together = [['order','product']]
+
     def __str__(self):
         return self.product+ " Quantity: "+str(quantity)

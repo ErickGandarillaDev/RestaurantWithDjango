@@ -12,20 +12,21 @@ class StatusSerializer(serializers.ModelSerializer):
 
 
 class ProductDetailSerializer(serializers.ModelSerializer):
-    # specify model and field
     #product = ProductSerializer();
+    productPrice= serializers.ReadOnlyField(source="product.price")
+    productName= serializers.ReadOnlyField(source="product.name")
+
     class Meta:
-        model = ProductDetail
-        fields = '__all__'
-
-
+       model = ProductDetail
+       fields = ('quantity','productPrice','productName')
 
 
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    products = serializers.StringRelatedField(many=True);
-    #products = ProductDetailSerializer(many=True);
+    #products = serializers.StringRelatedField(many=True);
+    products = ProductDetailSerializer(
+        many=True, source="productdetail_set", read_only=True)
     status= StatusSerializer()
 
     # specify model and fields
