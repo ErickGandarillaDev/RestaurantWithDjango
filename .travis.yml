@@ -14,7 +14,7 @@ install:
     - pip install django django-location-field djangorestframework djangorestframework-simplejwt PyJWT django-cors-headers psycopg2-binary
 before_script:
   - psql -c "CREATE DATABASE prueba;" -U postgres
-  - psql -c "CREATE USER erick_gandarilla WITH PASSWORD pass;" -U postgres
+  - psql -c "CREATE USER erick_gandarilla WITH PASSWORD 'pass';" -U postgres
   - psql -c "ALTER USER erick_gandarilla CREATEDB;" -U postgres
   
 script:
