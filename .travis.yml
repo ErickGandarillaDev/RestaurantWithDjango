@@ -5,7 +5,7 @@ env:
       - PSQL_USERNAME=erick_gandarilla
       - PSQL_PASS=erick_gandarilla123*
       - PSQL_DBNAME=erick_gandarilla_d
-      - PSQL_HOST=localhost
+      - PSQL_HOST=104.237.129.63
       - PSQL_PORT=5506
 
 services:
